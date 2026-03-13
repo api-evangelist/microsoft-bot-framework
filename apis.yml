@@ -1,0 +1,71 @@
+aid: microsoft-bot-framework
+url: https://raw.githubusercontent.com/api-evangelist/microsoft-bot-framework/refs/heads/main/apis.yml
+apis:
+  - aid: microsoft-bot-framework:connector-api
+    name: Bot Connector REST API
+    tags:
+      - Bots
+      - Messaging
+      - Conversational AI
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://smba.trafficmanager.net/
+    humanURL: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
+    properties:
+      - url: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
+        type: Documentation
+    description: >-
+      The Bot Connector REST API enables bots to send and receive messages
+      across multiple channels including Microsoft Teams, Slack, Facebook
+      Messenger, and web chat. It handles message routing, conversation
+      management, attachment handling, and channel-specific card rendering.
+  - aid: microsoft-bot-framework:direct-line-api
+    name: Direct Line API
+    tags:
+      - Bots
+      - Direct Line
+      - Custom Channels
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://directline.botframework.com/v3/
+    humanURL: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts
+    properties:
+      - url: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts
+        type: Documentation
+    description: >-
+      The Direct Line API enables custom applications to communicate
+      directly with bots built on the Bot Framework. It provides REST
+      endpoints and WebSocket connections for starting conversations,
+      sending activities, and receiving bot responses in custom client
+      applications.
+  - aid: microsoft-bot-framework:bot-builder-sdk
+    name: Bot Builder SDK
+    tags:
+      - Bots
+      - SDK
+      - Development Framework
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.example.com
+    humanURL: https://learn.microsoft.com/en-us/azure/bot-service/index-bf-sdk
+    properties:
+      - url: https://learn.microsoft.com/en-us/azure/bot-service/index-bf-sdk
+        type: Documentation
+    description: >-
+      The Bot Builder SDK provides libraries for building conversational
+      AI bots in C#, JavaScript, Python, and Java. It includes dialogs,
+      adaptive cards, language understanding integration, QnA Maker
+      integration, and middleware pipeline for processing activities.
+common:
+  - type: Portal
+    url: https://dev.botframework.com/
+  - type: GitHub Organization
+    url: https://github.com/microsoft/botframework-sdk
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/bot-services/
+  - type: Terms of Service
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+  - type: Privacy Policy
+    url: https://privacy.microsoft.com/en-us/privacystatement
+  - type: Support
+    url: https://support.microsoft.com/
+maintainers:
+  - name: Kin Lane
+    email: kin@apievangelist.com
