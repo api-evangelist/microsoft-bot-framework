@@ -65,13 +65,13 @@ apis:
 common:
   - type: Portal
     url: https://dev.botframework.com/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/microsoft/botframework-sdk
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/bot-services/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.microsoft.com/en-us/legal/terms-of-use
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://privacy.microsoft.com/en-us/privacystatement
   - type: Support
     url: https://support.microsoft.com/
