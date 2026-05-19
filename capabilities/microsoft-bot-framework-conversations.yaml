@@ -1,0 +1,114 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Bot Framework Connector REST API — Conversations
+  description: 'Microsoft Bot Framework Connector REST API — Conversations. 2 operations. Lead operation: Get Conversations.
+    Self-contained Naftiko capability covering one Microsoft Bot Framework business surface.'
+  tags:
+  - Microsoft Bot Framework
+  - Conversations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_BOT_FRAMEWORK_API_KEY: MICROSOFT_BOT_FRAMEWORK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-bot-framework-conversations
+    baseUri: https://api.botframework.com
+    description: Microsoft Bot Framework Connector REST API — Conversations business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: v3-conversations
+      path: /v3/conversations
+      operations:
+      - name: getconversations
+        method: GET
+        description: Get Conversations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: continuationToken
+          in: query
+          type: string
+      - name: createconversation
+        method: POST
+        description: Create Conversation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_BOT_FRAMEWORK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-bot-framework-conversations-rest
+    port: 8080
+    description: REST adapter for Microsoft Bot Framework Connector REST API — Conversations. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v3/conversations
+      name: v3-conversations
+      description: REST surface for v3-conversations.
+      operations:
+      - method: GET
+        name: getconversations
+        description: Get Conversations
+        call: microsoft-bot-framework-conversations.getconversations
+        with:
+          continuationToken: rest.continuationToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createconversation
+        description: Create Conversation
+        call: microsoft-bot-framework-conversations.createconversation
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-bot-framework-conversations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Bot Framework Connector REST API — Conversations. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: get-conversations
+      description: Get Conversations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-bot-framework-conversations.getconversations
+      with:
+        continuationToken: tools.continuationToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-conversation
+      description: Create Conversation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-bot-framework-conversations.createconversation
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
