@@ -56,6 +56,10 @@ apis:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/azure/bot-service/index-bf-sdk
 common:
+  - type: DomainSecurity
+    url: security/microsoft-bot-framework-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-bot-framework-authentication.yml
   - type: Portal
     url: https://dev.botframework.com/
   - type: GitHubOrganization
