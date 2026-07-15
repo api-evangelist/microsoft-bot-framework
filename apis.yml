@@ -56,6 +56,8 @@ apis:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/azure/bot-service/index-bf-sdk
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-bot-framework-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-bot-framework-domain-security.yml
   - type: Authentication
