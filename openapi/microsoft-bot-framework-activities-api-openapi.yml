@@ -1,0 +1,117 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bot Framework Connector REST Activities API
+  description: Minimal OpenAPI definition for the Bot Framework Connector REST API used by bots to send and receive activities, manage conversations, members, and attachments.
+  version: v3
+  x-generated-from: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.botframework.com
+  description: Bot Framework public service URL
+- url: https://smba.trafficmanager.net/{channel}
+  description: Channel-specific service URL (Teams, etc.)
+  variables:
+    channel:
+      default: teams
+security:
+- bearerAuth: []
+tags:
+- name: Activities
+paths:
+  /v3/conversations/{conversationId}/activities:
+    parameters:
+    - $ref: '#/components/parameters/ConversationId'
+    post:
+      tags:
+      - Activities
+      summary: Send To Conversation
+      operationId: sendToConversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+  /v3/conversations/{conversationId}/activities/history:
+    parameters:
+    - $ref: '#/components/parameters/ConversationId'
+    post:
+      tags:
+      - Activities
+      summary: Send Conversation History
+      operationId: sendConversationHistory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+  /v3/conversations/{conversationId}/activities/{activityId}:
+    parameters:
+    - $ref: '#/components/parameters/ConversationId'
+    - $ref: '#/components/parameters/ActivityId'
+    post:
+      tags:
+      - Activities
+      summary: Reply To Activity
+      operationId: replyToActivity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    put:
+      tags:
+      - Activities
+      summary: Update Activity
+      operationId: updateActivity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Activities
+      summary: Delete Activity
+      operationId: deleteActivity
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+  parameters:
+    ConversationId:
+      in: path
+      name: conversationId
+      required: true
+      schema:
+        type: string
+    ActivityId:
+      in: path
+      name: activityId
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

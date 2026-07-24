@@ -1,0 +1,125 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bot Framework Connector REST Activities Members API
+  description: Minimal OpenAPI definition for the Bot Framework Connector REST API used by bots to send and receive activities, manage conversations, members, and attachments.
+  version: v3
+  x-generated-from: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.botframework.com
+  description: Bot Framework public service URL
+- url: https://smba.trafficmanager.net/{channel}
+  description: Channel-specific service URL (Teams, etc.)
+  variables:
+    channel:
+      default: teams
+security:
+- bearerAuth: []
+tags:
+- name: Members
+paths:
+  /v3/conversations/{conversationId}/activities/{activityId}/members:
+    parameters:
+    - $ref: '#/components/parameters/ConversationId'
+    - $ref: '#/components/parameters/ActivityId'
+    get:
+      tags:
+      - Members
+      summary: Get Activity Members
+      operationId: getActivityMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /v3/conversations/{conversationId}/members:
+    parameters:
+    - $ref: '#/components/parameters/ConversationId'
+    get:
+      tags:
+      - Members
+      summary: Get Conversation Members
+      operationId: getConversationMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /v3/conversations/{conversationId}/pagedmembers:
+    parameters:
+    - $ref: '#/components/parameters/ConversationId'
+    - in: query
+      name: pageSize
+      schema:
+        type: integer
+    - in: query
+      name: continuationToken
+      schema:
+        type: string
+    get:
+      tags:
+      - Members
+      summary: Get Conversation Paged Members
+      operationId: getConversationPagedMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+  /v3/conversations/{conversationId}/members/{memberId}:
+    parameters:
+    - $ref: '#/components/parameters/ConversationId'
+    - in: path
+      name: memberId
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Members
+      summary: Get Conversation Member
+      operationId: getConversationMember
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Members
+      summary: Delete Conversation Member
+      operationId: deleteConversationMember
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    GenericList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericObject'
+    GenericObject:
+      type: object
+      additionalProperties: true
+  parameters:
+    ConversationId:
+      in: path
+      name: conversationId
+      required: true
+      schema:
+        type: string
+    ActivityId:
+      in: path
+      name: activityId
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,64 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bot Framework Connector REST Activities Conversations API
+  description: Minimal OpenAPI definition for the Bot Framework Connector REST API used by bots to send and receive activities, manage conversations, members, and attachments.
+  version: v3
+  x-generated-from: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.botframework.com
+  description: Bot Framework public service URL
+- url: https://smba.trafficmanager.net/{channel}
+  description: Channel-specific service URL (Teams, etc.)
+  variables:
+    channel:
+      default: teams
+security:
+- bearerAuth: []
+tags:
+- name: Conversations
+paths:
+  /v3/conversations:
+    get:
+      tags:
+      - Conversations
+      summary: Get Conversations
+      operationId: getConversations
+      parameters:
+      - in: query
+        name: continuationToken
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+    post:
+      tags:
+      - Conversations
+      summary: Create Conversation
+      operationId: createConversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
