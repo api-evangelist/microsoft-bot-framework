@@ -1,0 +1,20 @@
+{
+  "provider": "microsoft-bot-framework",
+  "sources": [
+    "microsoft-bot-framework-activities-api-openapi.yml",
+    "microsoft-bot-framework-attachments-api-openapi.yml",
+    "microsoft-bot-framework-conversations-api-openapi.yml",
+    "microsoft-bot-framework-members-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-bot-framework-activities-api-openapi.yml",
+    "microsoft-bot-framework-attachments-api-openapi.yml",
+    "microsoft-bot-framework-conversations-api-openapi.yml",
+    "microsoft-bot-framework-members-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

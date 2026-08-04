@@ -1,0 +1,272 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bot Framework Connector REST API
+  description: >-
+    Minimal OpenAPI definition for the Bot Framework Connector REST API used
+    by bots to send and receive activities, manage conversations, members,
+    and attachments.
+  version: v3
+  x-generated-from: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://api.botframework.com
+    description: Bot Framework public service URL
+  - url: https://smba.trafficmanager.net/{channel}
+    description: Channel-specific service URL (Teams, etc.)
+    variables:
+      channel:
+        default: teams
+security:
+  - bearerAuth: []
+tags:
+  - name: Conversations
+  - name: Activities
+  - name: Members
+  - name: Attachments
+paths:
+  /v3/conversations:
+    get:
+      tags: [Conversations]
+      summary: Get Conversations
+      operationId: getConversations
+      parameters:
+        - in: query
+          name: continuationToken
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+    post:
+      tags: [Conversations]
+      summary: Create Conversation
+      operationId: createConversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+  /v3/conversations/{conversationId}/activities:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+    post:
+      tags: [Activities]
+      summary: Send To Conversation
+      operationId: sendToConversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+  /v3/conversations/{conversationId}/activities/history:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+    post:
+      tags: [Activities]
+      summary: Send Conversation History
+      operationId: sendConversationHistory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+  /v3/conversations/{conversationId}/activities/{activityId}:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+      - $ref: '#/components/parameters/ActivityId'
+    post:
+      tags: [Activities]
+      summary: Reply To Activity
+      operationId: replyToActivity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    put:
+      tags: [Activities]
+      summary: Update Activity
+      operationId: updateActivity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Activities]
+      summary: Delete Activity
+      operationId: deleteActivity
+      responses:
+        '200':
+          description: OK
+  /v3/conversations/{conversationId}/activities/{activityId}/members:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+      - $ref: '#/components/parameters/ActivityId'
+    get:
+      tags: [Members]
+      summary: Get Activity Members
+      operationId: getActivityMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /v3/conversations/{conversationId}/members:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+    get:
+      tags: [Members]
+      summary: Get Conversation Members
+      operationId: getConversationMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /v3/conversations/{conversationId}/pagedmembers:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+      - in: query
+        name: pageSize
+        schema: { type: integer }
+      - in: query
+        name: continuationToken
+        schema: { type: string }
+    get:
+      tags: [Members]
+      summary: Get Conversation Paged Members
+      operationId: getConversationPagedMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+  /v3/conversations/{conversationId}/members/{memberId}:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+      - in: path
+        name: memberId
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Members]
+      summary: Get Conversation Member
+      operationId: getConversationMember
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Members]
+      summary: Delete Conversation Member
+      operationId: deleteConversationMember
+      responses:
+        '200':
+          description: OK
+  /v3/conversations/{conversationId}/attachments:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+    post:
+      tags: [Attachments]
+      summary: Upload Attachment
+      operationId: uploadAttachment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+  /v3/attachments/{attachmentId}:
+    parameters:
+      - in: path
+        name: attachmentId
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Attachments]
+      summary: Get Attachment Info
+      operationId: getAttachmentInfo
+      responses:
+        '200':
+          description: OK
+  /v3/attachments/{attachmentId}/views/{viewId}:
+    parameters:
+      - in: path
+        name: attachmentId
+        required: true
+        schema: { type: string }
+      - in: path
+        name: viewId
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Attachments]
+      summary: Get Attachment
+      operationId: getAttachment
+      responses:
+        '200':
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    ConversationId:
+      in: path
+      name: conversationId
+      required: true
+      schema: { type: string }
+    ActivityId:
+      in: path
+      name: activityId
+      required: true
+      schema: { type: string }
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericObject'
