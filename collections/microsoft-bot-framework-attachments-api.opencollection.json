@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Bot Framework Connector REST Activities Attachments API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attachments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload Attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botframework.com/v3/conversations/:conversationId/attachments",
+            "params": [
+              {
+                "name": "conversationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload Attachment"
+        },
+        {
+          "info": {
+            "name": "Get Attachment Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botframework.com/v3/attachments/:attachmentId",
+            "params": [
+              {
+                "name": "attachmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Attachment Info"
+        },
+        {
+          "info": {
+            "name": "Get Attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botframework.com/v3/attachments/:attachmentId/views/:viewId",
+            "params": [
+              {
+                "name": "attachmentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "viewId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Attachment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

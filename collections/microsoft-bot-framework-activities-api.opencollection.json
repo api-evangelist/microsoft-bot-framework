@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Bot Framework Connector REST Activities API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Activities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send To Conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botframework.com/v3/conversations/:conversationId/activities",
+            "params": [
+              {
+                "name": "conversationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send To Conversation"
+        },
+        {
+          "info": {
+            "name": "Send Conversation History",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botframework.com/v3/conversations/:conversationId/activities/history",
+            "params": [
+              {
+                "name": "conversationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send Conversation History"
+        },
+        {
+          "info": {
+            "name": "Reply To Activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botframework.com/v3/conversations/:conversationId/activities/:activityId",
+            "params": [
+              {
+                "name": "conversationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "activityId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reply To Activity"
+        },
+        {
+          "info": {
+            "name": "Update Activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.botframework.com/v3/conversations/:conversationId/activities/:activityId",
+            "params": [
+              {
+                "name": "conversationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "activityId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Activity"
+        },
+        {
+          "info": {
+            "name": "Delete Activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.botframework.com/v3/conversations/:conversationId/activities/:activityId",
+            "params": [
+              {
+                "name": "conversationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "activityId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Activity"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
