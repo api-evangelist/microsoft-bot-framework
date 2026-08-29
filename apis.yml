@@ -4,6 +4,18 @@ name: Microsoft Bot Framework
 description: >-
   Microsoft Bot Framework provides APIs and SDKs for building conversational AI bots that work across multiple channels
   including Teams, Slack, and custom applications.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
