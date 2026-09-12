@@ -126,6 +126,8 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
 common:
+  - type: Website
+    url: https://www.microsoft.com/
   - type: AgenticAccess
     url: agentic-access/microsoft-bot-framework-agentic-access.yml
   - type: DomainSecurity
@@ -152,3 +154,5 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: microsoft
+x-relationship: product
