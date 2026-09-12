@@ -1,5 +1,5 @@
 aid: microsoft-bot-framework
-url: https://raw.githubusercontent.com/api-evangelist/microsoft-bot-framework/refs/heads/main/apis.yml
+url: https://dev.botframework.com/
 name: Microsoft Bot Framework
 description: >-
   Microsoft Bot Framework provides APIs and SDKs for building conversational AI bots that work across multiple channels
