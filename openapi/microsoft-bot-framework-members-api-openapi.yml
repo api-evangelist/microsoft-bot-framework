@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Bot Framework Connector REST Activities Members API
+  title: Microsoft Bot Framework Connector REST Members API
   description: Minimal OpenAPI definition for the Bot Framework Connector REST API used by bots to send and receive activities, manage conversations, members, and attachments.
   version: v3
   x-generated-from: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference
@@ -97,27 +97,27 @@ paths:
         '200':
           description: OK
 components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericObject'
   parameters:
-    ConversationId:
-      in: path
-      name: conversationId
-      required: true
-      schema:
-        type: string
     ActivityId:
       in: path
       name: activityId
       required: true
       schema:
         type: string
-  schemas:
-    GenericList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GenericObject'
-    GenericObject:
-      type: object
-      additionalProperties: true
+    ConversationId:
+      in: path
+      name: conversationId
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

@@ -93,23 +93,23 @@ paths:
         '200':
           description: OK
 components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
   parameters:
-    ConversationId:
-      in: path
-      name: conversationId
-      required: true
-      schema:
-        type: string
     ActivityId:
       in: path
       name: activityId
       required: true
       schema:
         type: string
-  schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
+    ConversationId:
+      in: path
+      name: conversationId
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

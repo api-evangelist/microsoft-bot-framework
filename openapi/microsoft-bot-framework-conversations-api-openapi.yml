@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Bot Framework Connector REST Activities Conversations API
+  title: Microsoft Bot Framework Connector REST Conversations API
   description: Minimal OpenAPI definition for the Bot Framework Connector REST API used by bots to send and receive activities, manage conversations, members, and attachments.
   version: v3
   x-generated-from: https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference

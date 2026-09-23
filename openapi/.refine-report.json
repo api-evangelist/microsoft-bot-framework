@@ -1,10 +1,7 @@
 {
   "provider": "microsoft-bot-framework",
   "sources": [
-    "microsoft-bot-framework-activities-api-openapi.yml",
-    "microsoft-bot-framework-attachments-api-openapi.yml",
-    "microsoft-bot-framework-conversations-api-openapi.yml",
-    "microsoft-bot-framework-members-api-openapi.yml"
+    "_ae-authored/microsoft-bot-framework-openapi.yml"
   ],
   "outputs": [
     "microsoft-bot-framework-activities-api-openapi.yml",
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "microsoft-bot-framework-activities-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bot-framework-attachments-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bot-framework-conversations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bot-framework-members-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "microsoft-bot-framework-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "microsoft-bot-framework-activities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bot-framework-attachments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bot-framework-conversations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bot-framework-members-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
