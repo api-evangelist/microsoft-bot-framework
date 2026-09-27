@@ -76,10 +76,6 @@ paths:
                 type: string
                 format: binary
 components:
-  schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
   parameters:
     ConversationId:
       in: path
@@ -87,6 +83,10 @@ components:
       required: true
       schema:
         type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http

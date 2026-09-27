@@ -97,14 +97,6 @@ paths:
         '200':
           description: OK
 components:
-  schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
-    GenericList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GenericObject'
   parameters:
     ActivityId:
       in: path
@@ -118,6 +110,14 @@ components:
       required: true
       schema:
         type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericObject'
   securitySchemes:
     bearerAuth:
       type: http

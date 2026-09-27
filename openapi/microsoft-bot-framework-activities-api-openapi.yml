@@ -93,10 +93,6 @@ paths:
         '200':
           description: OK
 components:
-  schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
   parameters:
     ActivityId:
       in: path
@@ -110,6 +106,10 @@ components:
       required: true
       schema:
         type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http
