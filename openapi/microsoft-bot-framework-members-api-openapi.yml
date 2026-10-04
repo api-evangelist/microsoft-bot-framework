@@ -106,15 +106,15 @@ components:
       items:
         $ref: '#/components/schemas/GenericObject'
   parameters:
-    ConversationId:
-      in: path
-      name: conversationId
-      required: true
-      schema:
-        type: string
     ActivityId:
       in: path
       name: activityId
+      required: true
+      schema:
+        type: string
+    ConversationId:
+      in: path
+      name: conversationId
       required: true
       schema:
         type: string
