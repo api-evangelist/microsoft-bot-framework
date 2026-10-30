@@ -1,4 +1,4 @@
-# Microsoft Bot Framework (microsoft-bot-framework)
+# Microsoft Bot Framework
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,92 +66,132 @@
 
 Microsoft Bot Framework provides APIs and SDKs for building conversational AI bots that work across multiple channels including Teams, Slack, and custom applications.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-bot-framework/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-bot-framework/refs/heads/main/apis.yml)
+**Areas:** Bots · Conversational AI · Messaging · Bot Framework · Direct Line
 
-## Tags
+## Microsoft Bot Framework on APIs.io
 
-- Bots
-- Conversational AI
-- Messaging
-- Bot Framework
-- Direct Line
+Everything profiled for Microsoft Bot Framework is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-bot-framework/](https://apis.io/providers/microsoft-bot-framework/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (6)
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+- [Direct Line API](https://apis.io/apis/microsoft-bot-framework/direct-line/) — Custom applications communicate directly with bots through REST and WebSocket connections.
+- [Bot Builder SDK](https://apis.io/apis/microsoft-bot-framework/bot-builder-sdk/) — Libraries for building conversational AI bots in C#, JavaScript, Python, and Java.
+- [Microsoft Bot Framework Activities API](https://apis.io/apis/microsoft-bot-framework/microsoft-bot-framework-activities-api/) — The Activities API from Microsoft Bot Framework — 3 operation(s) for activities.
+- [Microsoft Bot Framework Attachments API](https://apis.io/apis/microsoft-bot-framework/microsoft-bot-framework-attachments-api/) — The Attachments API from Microsoft Bot Framework — 3 operation(s) for attachments.
+- [Microsoft Bot Framework Conversations API](https://apis.io/apis/microsoft-bot-framework/microsoft-bot-framework-conversations-api/) — The Conversations API from Microsoft Bot Framework — 1 operation(s) for conversations.
+- [Microsoft Bot Framework Members API](https://apis.io/apis/microsoft-bot-framework/microsoft-bot-framework-members-api/) — The Members API from Microsoft Bot Framework — 4 operation(s) for members.
 
-## APIs
+### Published properties
 
-### Bot Connector REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Send and receive messages across multiple channels including Teams, Slack, and web chat.
+#### MCP servers (1)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference](https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference)
-- **Base URL:** `https://api.botframework.com/`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [MCP Server](https://apis.io/servers/microsoft-bot-framework/mcp-server/)
 
-- Bots
-- Messaging
-- Conversational AI
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-api-reference)
-- [OpenAPI](openapi/microsoft-bot-framework-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/microsoft-bot-framework.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-bot-framework.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Microsoft Bot Framework Agentic Access](https://apis.io/agentic-access/microsoft-bot-framework/microsoft-bot-framework-agentic-access/)
 
-### Direct Line API
+#### Collections (5)
 
-Custom applications communicate directly with bots through REST and WebSocket connections.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts](https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts)
-- **Base URL:** `https://directline.botframework.com/`
+- [Microsoft Bot Framework Connector REST API](https://apis.io/collections/microsoft-bot-framework/open-microsoft-bot-framework/)
+- [Microsoft Bot Framework Connector REST Activities API](https://apis.io/collections/microsoft-bot-framework/open-microsoft-bot-framework-activities-api/)
+- [Microsoft Bot Framework Connector REST Activities Attachments API](https://apis.io/collections/microsoft-bot-framework/open-microsoft-bot-framework-attachments-api/)
+- [Microsoft Bot Framework Connector REST Activities Conversations API](https://apis.io/collections/microsoft-bot-framework/open-microsoft-bot-framework-conversations-api/)
+- [Microsoft Bot Framework Connector REST Activities Members API](https://apis.io/collections/microsoft-bot-framework/open-microsoft-bot-framework-members-api/)
 
-#### Tags
+#### Security (2)
 
-- Bots
-- Direct Line
-- Custom Channels
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Properties
+- [Microsoft Bot Framework Authentication](https://apis.io/security/microsoft-bot-framework/microsoft-bot-framework-authentication/)
+- [Microsoft Bot Framework Domain Security](https://apis.io/security/microsoft-bot-framework/microsoft-bot-framework-domain-security/)
 
-- [Documentation](https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-concepts)
-- [Postman Collection](collections/microsoft-bot-framework.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-bot-framework.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-### Bot Builder SDK
+Published plans, tiers and prices.
 
-Libraries for building conversational AI bots in C#, JavaScript, Python, and Java.
+- [Microsoft Bot Framework Plans Pricing](https://apis.io/plans/microsoft-bot-framework/microsoft-bot-framework-plans-pricing/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/azure/bot-service/index-bf-sdk](https://learn.microsoft.com/en-us/azure/bot-service/index-bf-sdk)
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Bots
-- SDK
-- Development Framework
+- [Microsoft Bot Framework Rate Limits](https://apis.io/rate-limits/microsoft-bot-framework/microsoft-bot-framework-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://learn.microsoft.com/en-us/azure/bot-service/index-bf-sdk)
-- [Postman Collection](collections/microsoft-bot-framework.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-bot-framework.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+What the API costs to run, by operation.
 
-## Common Properties
+- [Microsoft Bot Framework Finops](https://apis.io/finops/microsoft-bot-framework/microsoft-bot-framework-finops/)
 
-- [Portal](https://dev.botframework.com/)
-- [GitHub Organization](https://github.com/microsoft/botframework-sdk)
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.microsoft.com/)
 - [Pricing](https://azure.microsoft.com/en-us/pricing/details/bot-services/)
-- [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
 - [Support](https://support.microsoft.com/)
-- [M C P Server](https://github.com/microsoft/ignite25-LAB513-build-a2a-and-mcp-systems-using-swe-agents-and-agent-framework)
-- [L L Ms Txt](https://dev.botframework.com/llms.txt)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/microsoft/botframework-sdk)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 33.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.7 |
+| Contract quality | 42.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 39.5 |
+
+**Agent readiness 21.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 19.6** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-bot-framework/](https://apis.io/providers/microsoft-bot-framework/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft Bot Framework: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-bot-framework/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
